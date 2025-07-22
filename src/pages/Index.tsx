@@ -39,8 +39,12 @@ export default function Index() {
       <header className="bg-white/90 backdrop-blur-sm border-b border-orange-200 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-              🥷
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-orange-500">
+              <img 
+                src="https://cdn.poehali.dev/files/dd593c24-7edb-4ad9-807d-cc744ccffe7f.jpg" 
+                alt="Naruto" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <h1 className="text-3xl font-montserrat font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
               NINJA ACADEMY

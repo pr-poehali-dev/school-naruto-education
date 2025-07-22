@@ -33,10 +33,52 @@ export default function Index() {
     { name: "Хокаге", minXP: 10000, color: "bg-orange-500" },
   ];
 
+  const classes = [
+    { number: 1, subjects: ["Математика", "Русский язык", "Окружающий мир"] },
+    { number: 2, subjects: ["Математика", "Русский язык", "Окружающий мир"] },
+    { number: 3, subjects: ["Математика", "Русский язык", "Окружающий мир"] },
+    { number: 4, subjects: ["Математика", "Русский язык", "Окружающий мир"] },
+    { number: 5, subjects: ["Математика", "Русский язык", "История", "Биология"] },
+    { number: 6, subjects: ["Математика", "Русский язык", "История", "Биология", "География"] },
+    { number: 7, subjects: ["Математика", "Русский язык", "История", "Биология", "География", "Физика"] },
+    { number: 8, subjects: ["Математика", "Русский язык", "История", "Биология", "География", "Физика", "Химия"] },
+    { number: 9, subjects: ["Математика", "Русский язык", "История", "Биология", "География", "Физика", "Химия"] },
+    { number: 10, subjects: ["Математика", "Русский язык", "История", "Биология", "География", "Физика", "Химия"] },
+    { number: 11, subjects: ["Математика", "Русский язык", "История", "Биология", "География", "Физика", "Химия"] },
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50 font-open-sans">
-      {/* Header */}
-      <header className="bg-white/90 backdrop-blur-sm border-b border-orange-200 sticky top-0 z-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50 font-open-sans flex">
+      {/* Sidebar with Class Selection */}
+      <aside className="w-64 bg-white/90 backdrop-blur-sm border-r border-orange-200 h-screen sticky top-0 overflow-y-auto">
+        <div className="p-6">
+          <h3 className="text-xl font-montserrat font-bold text-gray-800 mb-6">Выбери класс</h3>
+          <div className="space-y-2">
+            {classes.map((classItem) => (
+              <Button
+                key={classItem.number}
+                variant="ghost"
+                className="w-full justify-start h-auto p-4 hover:bg-orange-50 hover:border-orange-200 border border-transparent transition-all"
+              >
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
+                    {classItem.number}
+                  </div>
+                  <div className="text-left">
+                    <div className="font-semibold text-gray-800">{classItem.number} класс</div>
+                    <div className="text-xs text-gray-500">{classItem.subjects.length} предметов</div>
+                  </div>
+                </div>
+              </Button>
+            ))}
+          </div>
+        </div>
+      </aside>
+
+      {/* Main Content */}
+      <div className="flex-1">
+        {/* Header */}
+        <header className="bg-white/90 backdrop-blur-sm border-b border-orange-200 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-orange-500">
@@ -275,6 +317,7 @@ export default function Index() {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
